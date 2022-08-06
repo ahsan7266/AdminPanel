@@ -1,0 +1,561 @@
+/* Portfolio-Steps  Steps Style Start*/
+
+.step1container {
+    display: block;
+}
+
+.step2container {
+    display: none;
+}
+
+.step3container {
+    display: none;
+}
+
+.step4container {
+    display: none;
+}
+
+.step5container {
+    display: none;
+}
+
+
+.Portfolio .Portfolio-steps {
+    margin-bottom: 40px;
+}
+
+    .Portfolio .Portfolio-steps::after {
+        display: block;
+        clear: both;
+        content: ''
+    }
+
+    .Portfolio .Portfolio-steps a {
+        display: block;
+        position: relative;
+        width: 18%;
+        height: 55px;
+        float: right;
+        transition: color .3s;
+        border-top: 1px solid #e1e7ec;
+        border-bottom: 1px solid #e1e7ec;
+        background-color: #000000;
+        color: #606975;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 53px;
+        text-decoration: none;
+        text-align: center
+    }
+
+        .Portfolio .Portfolio-steps a .step-indicator {
+            visibility: hidden;
+        }
+
+        .Portfolio .Portfolio-steps a.completed .step-indicator {
+            display: inline-block;
+            margin-top: -5px;
+            margin-right: 7px;
+            border-radius: 50%;
+            color: #43d9a3;
+            font-size: 18px;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle;
+            visibility: visible;
+            transition: visibility 8s ease-out;
+        }
+
+        .Portfolio .Portfolio-steps a .angle {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -13px;
+            width: 27px;
+            height: 53px;
+            background-color: #000000
+        }
+
+            .Portfolio .Portfolio-steps a .angle::before,
+            .Portfolio .Portfolio-steps a .angle::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 0;
+                border: solid transparent;
+                content: '';
+                pointer-events: none
+            }
+
+            .Portfolio .Portfolio-steps a .angle::after {
+                border-width: 26px;
+                border-color: transparent;
+                border-left-color: #000000;
+            }
+
+            .Portfolio .Portfolio-steps a .angle::before {
+                margin-top: -1px;
+                border-width: 27px;
+                border-color: transparent;
+                border-left-color: #d8e0e6
+            }
+
+        .Portfolio .Portfolio-steps a:hover {
+            color: #dc3545
+        }
+
+        .Portfolio .Portfolio-steps a.active {
+            background-color: #dc3545;
+            color: #000;
+            cursor: default;
+            pointer-events: none
+        }
+
+            .Portfolio .Portfolio-steps a.active .angle::after {
+                border-left-color: #dc3545
+            }
+
+            .Portfolio .Portfolio-steps a.active + a .angle {
+                background-color: #dc3545
+            }
+
+        .Portfolio .Portfolio-steps a.completed .step-indicator {
+            display: inline-block;
+            margin-top: -5px;
+            margin-right: 7px;
+            border-radius: 50%;
+            color: #43d9a3;
+            font-size: 18px;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle
+        }
+
+        .Portfolio .Portfolio-steps a.completed:hover {
+            color: #606975
+        }
+
+        .Portfolio .Portfolio-steps a:first-child {
+            border-right: 1px solid #e1e7ec;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px
+        }
+
+        .Portfolio .Portfolio-steps a:last-child {
+            border-left: 1px solid #e1e7ec;
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px
+        }
+
+/* Create Portfolio-Steps Steps Style End*/
+
+/* Choose porfolio templates Start*/
+
+.title {
+    width: 100%;
+    text-align: center;
+}
+
+    .title h1 {
+        font-size: 50px;
+        font-family: 'Exo', sans-serif;
+    }
+
+.Templates a:hover {
+    text-decoration: none;
+}
+
+.Templates {
+    text-align: center;
+    position: absolute;
+    left: 100px;
+    width: 250px;
+    height: 350px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #191c24;
+    transition: .6s;
+    transform: rotatex(75deg) translatey(-200px) translatez(-100px);
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+    .Templates:hover {
+        transform: rotatex(0deg);
+        transform: rotatez(0deg);
+        transition: .6s;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .Templates img {
+        transform: translateY(15px);
+        width: 200px;
+        height: 250px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+h3 {
+    font-size: 30px;
+    font-family: 'Abel', sans-serif;
+    color: #000000;
+    text-shadow: 0 0 2px #6D0019;
+    transform: translatey(10px);
+}
+
+p {
+    font-family: 'Abel', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    width: 220px;
+    transform: translatex(12px);
+}
+
+/* Choose porfolio templates End*/
+
+/*Button Styling start */
+.ButtonStyle {
+    position: relative;
+    width: 175px;
+    height: 50px;
+    margin: auto;
+    cursor: pointer;
+}
+
+    .ButtonStyle a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        color: #FFFFFF;
+        z-index: 1;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: 0.5s;
+        backdrop-filter: blur(15px);
+    }
+
+    .ButtonStyle:hover a {
+        letter-spacing: 2px;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .ButtonStyle a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+        transform: skewX(45deg) translateX(0);
+        transition: 0.5s;
+    }
+
+    .ButtonStyle:hover a::before {
+        transform: skewX(45deg) translateX(200%);
+    }
+
+    .ButtonStyle::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+        width: 30px;
+        height: 10px;
+        background: #d00;
+        border-radius: 10px;
+        transition: 0.5s;
+        transition-delay: 0s;
+    }
+
+    .ButtonStyle:hover::before {
+        bottom: 0;
+        height: 50%;
+        width: 80%;
+        border-radius: 30px;
+        transition-delay: 0.5s;
+    }
+
+    .ButtonStyle::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -5px;
+        width: 30px;
+        height: 10px;
+        background: #f00;
+        border-radius: 10px;
+        transition: 0.5s;
+        transition-delay: 0s;
+    }
+
+    .ButtonStyle:hover::after {
+        top: 0;
+        height: 50%;
+        width: 80%;
+        border-radius: 30px;
+        transition-delay: 0.5s;
+    }
+
+    .ButtonStyle:nth-child(3)::before,
+    .ButtonStyle:nth-child(3)::after {
+        background: #ff1f71;
+        box-shadow: 0 0 5px #ff1f71 0 0 15px #ff1f71 0 0 30px #ff1f71 0 0 60px #ff1f71;
+    }
+
+    .ButtonStyle:nth-child(1)::before,
+    .ButtonStyle:nth-child(1)::after {
+        background: #2bd2ff;
+        box-shadow: 0 0 5px #2bd2ff 0 0 15px #2bd2ff 0 0 30px #2bd2ff 0 0 60px #2bd2ff;
+    }
+
+    .ButtonStyle:nth-child(2)::before,
+    .ButtonStyle:nth-child(2)::after {
+        background: #1eff45;
+        box-shadow: 0 0 5px #1eff45 0 0 15px #1eff45 0 0 30px #1eff45 0 0 60px #1eff45;
+    }
+
+
+/*Button Styling start */
+
+/* Backgound area Image Style Start */
+.background-area {
+    background: #000000;
+    width: 85%;
+    height: 200px;
+    margin: auto;
+    padding-top: 80px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    .background-area .icon {
+        height: 30px;
+        width: 70%;
+        color: #111;
+        background: #fff;
+        font-size: 10px;
+        font-weight: 900;
+        cursor: pointer;
+        margin: auto;
+    }
+
+        .background-area .icon:hover {
+            background: #464749;
+            color: #fff;
+        }
+
+/* Backgound area Image Style End */
+
+/* Upload Images Style Start */
+.outer-area {
+    background: #000000;
+    width: 155px;
+    height: 155px;
+    border: 15px solid #191C24;
+    border-radius: 50%;
+    margin: auto;
+    z-index: 999;
+}
+
+.inner-area {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+    .inner-area.active {
+        border: 2px solid #1e1f23;
+    }
+
+    .inner-area button {
+        height: 50px;
+        width: 50px;
+        color: #111;
+        background: #fff;
+        font-size: 33px;
+        font-weight: 500;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+
+        .inner-area button:hover {
+            background: #464749;
+            color: #fff;
+        }
+
+    .inner-area .getimage {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+        border-radius: 50%;
+        display: none;
+    }
+
+    .inner-area .fileupload {
+        visibility: hidden;
+    }
+
+.showimage {
+    display: block;
+}
+
+/* Upload Images Style End */
+
+/* Saved-item Style Start */
+.saveditem-Box {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(45deg, #ff0000 0%, #ff9a00 10%, #d0de21 20%, #4fdc4a 30%, #3fdad8 40%, #2fc9e2 50%, #1c7fee 60%, #5f15f2 70%, #ba0cf8 80%, #fb07d9 90%, #ff0000 100%) repeat 0% 0% / 300% 100%;
+    box-shadow: 10px 2px 2px 2px #2fc9e2, 5px 5px 20px 5px #0fc4e0b0;
+    border-radius: 16px;
+    animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.saved-items {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    color: #111;
+    font-weight: bolder;
+    overflow: hidden;
+}
+
+    .saved-items .durationDate {
+        font-size: 10px;
+        font-weight: bolder;
+    }
+
+    .saved-items .delete-items {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        color: rgb(190, 13, 13);
+        background: #191C24;
+        padding: 0 6px;
+        border-radius: 50%;
+        font-size: 20px;
+    }
+
+        .saved-items .delete-items:hover {
+            background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
+            color: #fff;
+        }
+
+/* Saved-item Style End */
+
+/* Skills Item Style Start */
+.Skills-Box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000000;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+    .Skills-Box::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#00ccff, #d400d4);
+        animation: animate 4s linear infinite;
+    }
+
+    .Skills-Box::after {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #191C24;
+        border-radius: 16px;
+    }
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.Skills-items {
+    width: 100%;
+    height: 100%;
+    padding: 18px 8px;
+    font-size: 11px;
+    z-index: 1;
+}
+
+    .Skills-items .delete-items {
+        position: absolute;
+        top: 15px;
+        right: 5px;
+        cursor: pointer;
+        color: #fff;
+        background: linear-gradient(to bottom, #a90329 0%, #8f0222 44%, #6d0019 100%);
+        padding: 1px 5px;
+        border-radius: 50%;
+        font-size: 10px;
+    }
+
+        .Skills-items .delete-items:hover {
+            background: linear-gradient(#00ccff, #d400d4);
+            color: #111;
+        }
+
+.lblTypingText {
+    font-size: 15px;
+}
+
+/* Skills Item Style End */

@@ -1,0 +1,498 @@
+﻿@{
+    ViewData["Title"] = "Dasboard";
+}
+
+
+<div class="page-header">
+        <h3 class="page-title">Create Portfolio </h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="Dashboard.aspx">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Create Portfolio</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row justify-content-center">
+
+        <div class="col-md-12 grid-margin Portfolio mr-5">
+
+            <div class="Portfolio-steps">
+
+                <a class="btnstep5" href="#">
+                    <span class="step-indicator mdi mdi-check-circle"></span>
+                    Step 5
+                </a>               
+                <a class="btnstep4" href="#">
+                    <span class="step-indicator mdi mdi-check-circle"></span>
+                    <span class="angle"></span>Step 4
+                </a>
+                <a class="btnstep3" href="#">
+                    <span class="step-indicator mdi mdi-check-circle"></span>
+                    <span class="angle"></span>Step 3
+                </a>
+                <a class="btnstep2" href="#">
+                    <span class="step-indicator mdi mdi-check-circle"></span>
+                    <span class="angle"></span>Step 2
+                </a>
+                <a class="btnstep1 active" href="#">
+                    <span class="step-indicator mdi mdi-check-circle"></span>
+                    <span class="angle"></span>Step 1
+                </a>
+
+            </div>
+        </div>
+
+        <!--  Step 1 -->
+
+        <div class="col-md-8 grid-margin stretch-card step1container">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Step 1</h4>
+
+                    <p class="card-description text-primary font-weight-bolder">
+                        Personal Detail
+                    </p>
+
+                    <div class="form-sample">
+
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-md-10">
+
+                                <div class="background-area">
+                                    <asp:FileUpload ID="Filebackgroundimage" runat="server" accept="assets/images/PortfolioImages/*" class="uploadfile file-backgroundimage d-none" />
+                                    <span class="icon browse-backgroundimage">Upload Background Image</span>
+
+                                    <div class="outer-area mt-3">
+                                        <asp:FileUpload ID="Fileprofileimage" runat="server" accept="assets/images/PortfolioImages/*" class="uploadfile file-profileimage d-none" />
+                                        <div class="inner-area">
+                                            <i class="mdi mdi-nest-protect"></i>
+                                            <button type="button" class="browsefile browse-profileimage">
+                                                <i class="mdi mdi-camera"></i>
+                                            </button>
+                                            <img id="profileimage" class="getimage get-profileimage" src="#" alt="your image" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center mt-5">
+
+                            <div class="col-md-12">
+
+                                <div class="row justify-content-center mt-5">
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validfname">
+                                            <div class="d-flex">
+                                                <input id="txtfname" runat="server" type="text" class="form-control txtvalidate" placeholder="Enter Your First Name" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validlname">
+                                            <div class="d-flex">
+                                                <input id="txtlname" runat="server" type="text" class="form-control txtvalidate" placeholder="Enter Your Last Name" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validphonenumber">
+                                            <div class="d-flex">
+                                                <input id="txtphonenumber" runat="server" type="number" class="form-control txtvalidate" placeholder="Enter Your Phone Number" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validage">
+                                            <div class="d-flex">
+                                                <input id="txtage" runat="server" type="number" class="form-control txtvalidate" placeholder="Enter Your Age" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group validation validemail">
+                                            <div class="d-flex">
+                                                <input id="txtemail" runat="server" type="text" class="form-control txtvalidate" placeholder="Enter Your Email" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validcountry">
+                                            <div class="d-flex">
+                                                <input id="txtcountry" runat="server" type="text" class="form-control txtvalidate" placeholder="Enter Your Country" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validcity">
+                                            <div class="d-flex">
+                                                <input id="txtcity" runat="server" type="text" class="form-control txtvalidate" placeholder="Enter Your City" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group validation validaddress">
+                                            <div class="d-flex">
+                                                <input id="txtaddress" runat="server" type="text" class="form-control txtvalidate" placeholder="Enter Your Address" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validbirthday">
+                                            <div class="d-flex">
+                                                <input id="txtbirthday" runat="server" type="date" class="form-control txtvalidate" placeholder="Enter Your Birthday Date" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validprofession">
+                                            <div class="d-flex">
+                                                <input id="txtprofession" runat="server" type="text" class="form-control txtvalidate" placeholder="Enter Your Professsion" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group validation validaboutyourself">
+                                            <div class="d-flex">
+                                                <input id="txtaboutyourself" runat="server" type="text" class="form-control txtvalidate" placeholder="About Yourself" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <a id="AddPersonalDetail" runat="server" onserverclick="AddPersonalDetail_ServerClick" class="btn btn-info float-left">+ Add Personal Detail</a>
+                                <label id="lblmsg" runat="server" class="ml-5 text-success"></label>
+                                <a class="btn btn-info float-right SubmitPersonalDetail">Next Step 
+                                    <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  Step 2 -->
+
+        <div class="col-md-8 grid-margin stretch-card step2container">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Step 2</h4>
+
+                    <p class="card-description text-primary font-weight-bolder m-auto">Education </p>
+
+                    <div class="forms-sample mt-3" ng-controller="Education_ctr">
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-md-12">
+                                <div class="form-group validation validdegree">
+                                    <div class="d-flex">
+                                        <input id="txtDegreeName" type="text" class="form-control txtvalidate" placeholder="Enter Your Degree Name" ng-model="degree" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group validation validinstitute">
+                                    <div class="d-flex">
+                                        <input id="txtInstituteName" type="text" class="form-control txtvalidate" placeholder="Enter Your Institute Name"
+                                            ng-model="institute" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="float-left text-primary">Duration</label>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group validation validfrom">
+                                    <label>From</label>
+                                    <div class="d-flex">
+                                        <input id="txtEducationFrom" type="date" class="form-control txtvalidate" placeholder="Starting Date" ng-model="fromDate" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group validation validto">
+                                    <label>To</label>
+                                    <div class="d-flex">
+                                        <input id="txtEducationTo" type="date" class="form-control txtvalidate" placeholder="Ending Date" ng-model="toDate" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-success AddEducation" ng-click="Education_Saveitem()">Add Education</a>
+                        </div>
+
+                        <div class="row justify-content-center mt-4 mb-5">
+
+                            <div class="col-lg-6 col-md-5 col-sm-12 mb-5"
+                                ng-repeat="item in Education_items track by $index">
+                                <div class="saveditem-Box">
+                                    <div class="saved-items ">
+                                        <span class="delete-items mdi mdi-close DeleteEducation" ng-click="ClearEducation($index)"></span>
+                                        <label class="lbldegree">{{item.Degree}}</label>
+                                        <br>
+                                        <label class="lblinstitute">{{item.Institute}}</label>
+                                        <br>
+                                        <span class="durationDate">{{item.Fromdate | date:"MMM yyyy"}} - {{item.Todate | date:"MMM yyyy"}}</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <a class="btn btn-danger float-left skipEducation">Skip</a>
+                        <a class="btn btn-info float-right SubmitEducation">Next Step 
+                            <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--  Step 3 -->
+        <div class="col-md-8 grid-margin stretch-card step3container">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Step 3</h4>
+
+                    <p class="card-description text-primary font-weight-bolder m-auto">
+                        Experience
+                    </p>
+
+                    <div class="forms-sample mt-3" ng-controller="Experiance_ctr">
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-md-12">
+                                <div class="form-group validation validEtitle">
+                                    <div class="d-flex">
+                                        <input id="txtEtitle" type="text" class="form-control txtvalidate" placeholder="Enter Your Title" ng-model="Etitle" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group validation validEinstitute">
+                                    <div class="d-flex">
+                                        <input id="txtEinstitute" type="text" class="form-control txtvalidate" placeholder="Enter Your Institute Name"
+                                            ng-model="Einstitute" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group validation validEdescription">
+                                    <div class="d-flex">
+                                        <textarea id="txtEdescription" type="text" class="form-control txtvalidate" placeholder="Description" ng-model="Edescription"></textarea>
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="float-left text-primary">Duration</label>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group validation validfrom">
+                                    <label>From</label>
+                                    <div class="d-flex">
+                                        <input id="txtEFrom" type="date" class="form-control txtvalidate" placeholder="Starting Date" ng-model="EfromDate" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group validation validto">
+                                    <label>To</label>
+                                    <div class="d-flex">
+                                        <input id="txtETo" type="date" class="form-control txtvalidate" placeholder="Ending Date" ng-model="EtoDate" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-success AddExperiance" ng-click="Experiance_Saveitem()">Add Experiance</a>
+                        </div>
+
+                        <div class="row justify-content-center mt-4 mb-5">
+
+                            <div class="col-lg-6 col-md-5 col-sm-12 mb-5"
+                                ng-repeat="item in Experiance_items track by $index">
+
+                                <div class="saveditem-Box ">
+                                    <div class="saved-items">
+                                        <span class="delete-items mdi mdi-close DeleteExperiance" ng-click="ClearExperiance($index)"></span>
+                                        <label class="lblETitle">{{item.ETitle}}</label>
+                                        <br>
+                                        <label class="lblEinstitute">{{item.EInstitute}}</label>
+                                        <br>
+                                        <span class="durationDate">{{item.Fromdate | date:"MMM yyyy"}} - {{item.Todate | date:"MMM yyyy"}}</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <a class="btn btn-danger float-left skipExperiance">Skip</a>
+                        <a class="btn btn-info float-right SubmitExperiance">Next Step <span class="mdi mdi-arrow-top-right-bold-outline"></span></a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--  Step 4 -->
+        <div class="col-md-8 grid-margin stretch-card step4container">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Step 4</h4>
+
+                    <p class="card-description text-primary font-weight-bolder m-auto">Skills</p>
+
+                    <div class="forms-sample mt-3" ng-controller="Skills_ctr">
+
+                        <div class="row justify-content-center">
+
+                            <div class="col-md-10">
+                                <div class="form-group validation validSkills">
+                                    <div class="d-flex">
+                                        <input id="txtskills" type="text" class="form-control txtvalidate" placeholder="Enter Your Skills" ng-model="txtSkills" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group validation validSkillpercentage">
+                                    <div class="d-flex">
+                                        <input id="txtskillpercentage" type="number" max="100" class="form-control txtvalidate" placeholder="%" ng-model="SkillPercentage" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a class="btn btn-success AddSkills" ng-click="Skills_Saveitem()">Add Skills</a>
+                        </div>
+
+                        <div class="row justify-content-center mt-4 mb-5">
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 mb-3"
+                                ng-repeat="item in Skills_items track by $index">
+
+                                <div class="Skills-Box">
+                                    <div class="Skills-items">
+                                        <span class="delete-items mdi mdi-close DeleteSkills" ng-click="ClearSkills($index)"></span>
+                                        <label class="lblskills">{{item.Skills}}</label>
+                                        ⇝
+                                        <label class="lblskillpercentage">{{item.SkillPercentage}}</label>%
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <a class="btn btn-info float-right SubmitSkills">Next Step <span class="mdi mdi-arrow-top-right-bold-outline"></span></a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--  Step 5 -->
+
+        <div class="col-md-10 grid-margin stretch-card step5container">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Step 5</h4>
+
+                    <p class="card-description text-primary font-weight-bolder">Other Details</p>
+
+                    <div class="form-sample" ng-controller="otherdetails_ctr">
+
+                        <div class="row justify-content-center">
+
+                            <div class=" col-md-8">
+
+                                <p class="card-description text-info m-auto">
+                                    Typing Text Who You are..?
+                                </p>
+
+                                <div class="form-group validation validtypingtext mt-3">
+                                    <div class="d-flex">
+                                        <a class="btn btn-info font-weight-bolder AddTyping" ng-click="Typing_Additem()">Save</a>
+                                        <input id="txttypingtext" type="text" class="form-control txtvalidate" placeholder="I'm Web Developer" ng-model="typingtext" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row justify-content-center">
+
+                                    <div class="col-lg-3 col-md-3 col-sm-6 mb-3" ng-repeat="item in Typing_items track by $index">
+                                        <div class="Skills-Box">
+                                            <div class="Skills-items">
+                                                <span class="delete-items mdi mdi-close DeleteTyping" ng-click="ClearTyping($index)"></span>
+                                                <span class="lblTypingText">{{item.TypingText}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
