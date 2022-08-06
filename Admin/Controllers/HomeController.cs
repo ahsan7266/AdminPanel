@@ -15,6 +15,11 @@ namespace Admin.Controllers
 
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("Token") == null)
+            {
+                return Redirect("/Account/Login");
+            }
+            ViewBag.Name = HttpContext.Session.GetString("FirstName") +' '+ HttpContext.Session.GetString("LastName");
             return View();
         }
 

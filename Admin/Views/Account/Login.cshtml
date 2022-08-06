@@ -18,33 +18,34 @@
         <div class="form-content">
 
             <h3>Log-In</h3>
-
-            <div class="inputBox">
-                <span>Email</span>
-                <div class="box">
-                    <div class="icon"><i class="fa fa-user"></i></div>
-                    <input type="text" class="txtemail" />
+            <form method="post" enctype="multipart/form-data" asp-controller="Account" asp-action="Login">
+                <div class="inputBox">
+                    <span>Email</span>
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-user"></i></div>
+                        <input type="text" name="Email" class="txtemail" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="inputBox">
-                <span>Pasword</span>
-                <div class="box">
-                    <div class="icon"><i class="fa fa-lock"></i></div>
-                    <input type="password" class="txtpass password" />
-                    <i class="fa fa-eye passicon"></i>
+                <div class="inputBox">
+                    <span>Pasword</span>
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-lock"></i></div>
+                        <input type="password" name="Password" class="txtpass password" />
+                        <i class="fa fa-eye passicon"></i>
+                    </div>
                 </div>
-            </div>
 
-            <label>
-                <input type="checkbox"> Remember me
-            </label>
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
 
-            <div class="inputBox">
-                <div class="box">
-                    <input type="submit" value="Log-In" class="btnlogin submitlogin" />
+                <div class="inputBox">
+                    <div class="box">
+                        <input type="submit" value="Log-In" class="btnlogin submitlogin" />
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </body>
@@ -57,50 +58,6 @@
 <script>
 
 
-    $(".submitlogin").click(function() {
-        var Email = $(".txtemail").val();
-        var Password = $(".password").val();
-        if (Email != null) {
-            if (Password != null) {
-                if (Email == "admin.123" && Password == "123") {
-                    toastr.success("Success", "Login Successfully..!");
-                    window.location.href = "/Home/Index";
-                }
-                else {
-                    toastr.erorr("Error", "Login Failed..!");
-                }
-            }
-            else {
-                toastr.erorr("Error", "Password is Required..!");
-            }
-        }
-        else {
-            toastr.erorr("Error", "Email is Required..!");
-        }
-
-
-        //var log = new Object();
-        //log.Email = $(".txtemail").val();
-        //log.Password = $(".password").val();
-        //$.ajax({
-        //    url: "https://localhost:7164/api/Account/Login",
-        //    type: "POST",
-        //    data: JSON.stringify(log),
-        //    dataType: "json",
-        //    contentType: "application/json",
-        //    success: function(data) {
-        //        localStorage.setItem('token', data.Message);
-        //        localStorage.setItem('UserEmail', data.Email);
-        //        if (localStorage.getItem('token') != null) {
-        //            toastr.success("Success", "User is Login Successfully..!");
-        //            window.location.href = "/Home/Index";
-        //        }
-        //    },
-        //    error: function(error) {
-        //        console.log(error);
-        //    }
-        //});
-    });
 
     $(".passicon").click(function() {
         $(this).toggleClass("fa-eye-slash");
