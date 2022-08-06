@@ -636,7 +636,6 @@ $(document).ready(function () {
 
 //Loader Start
 document.onreadystatechange = function () {
-    debugger;
     var state = document.readyState;
     if (state == 'interactive') {
         document.getElementById('contents').style.visibility = "hidden";

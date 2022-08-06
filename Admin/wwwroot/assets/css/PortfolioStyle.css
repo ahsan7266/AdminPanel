@@ -20,9 +20,11 @@
     display: none;
 }
 
-
-.Portfolio .Portfolio-steps {
-    margin-bottom: 40px;
+.center-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
     .Portfolio .Portfolio-steps::after {
@@ -34,7 +36,7 @@
     .Portfolio .Portfolio-steps a {
         display: block;
         position: relative;
-        width: 18%;
+        width: 33%;
         height: 55px;
         float: right;
         transition: color .3s;
