@@ -1,0 +1,494 @@
+﻿@{
+    ViewData["Title"] = "Add Portfolio Detail";
+}
+
+<div class="page-header">
+    <h3 class="page-title">Create Portfolio </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a onclick="location.href='@Url.Action("Dashboard","Portfolio")'">Dashboard</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Portfolio Detail</li>
+        </ol>
+    </nav>
+</div>
+<div class="row justify-content-center">
+
+    <div class="col-md-12 grid-margin Portfolio mr-5">
+
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-6 col-lg-6 center-me">
+
+                <div class="Steps">
+                    <a class="btnstep3" href="#">
+                        <span class="step-indicator mdi mdi-check-circle"></span>
+                        Add Project
+                    </a>
+                    <a class="btnstep2" href="#">
+                        <span class="step-indicator mdi mdi-check-circle"></span>
+                        <span class="angle"></span>Skill & Services
+                    </a>
+                    <a class="btnstep1 active" href="#">
+                        <span class="step-indicator mdi mdi-check-circle"></span>
+                        <span class="angle"></span>Personal Info
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!--  Personal Info 1 -->
+
+    <div class="col-md-8 grid-margin stretch-card step1container">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Personal Detail</h4>
+
+                <p class="card-description text-primary font-weight-bolder">
+                    Please Fill your all information
+                </p>
+
+                <div class="form-sample">
+
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-md-10">
+
+                            <div class="background-area">
+                                <input id="Filebackgroundimage" type="file" accept="~/images/*" class="uploadfile file-backgroundimage d-none" />
+                                <span class="icon browse-backgroundimage">Upload Background Image</span>
+                                <div class="outer-area mt-3">
+                                    <input id="Fileprofileimage" type="file" accept="~/images/*" class="uploadfile file-profileimage d-none" />
+                                    <div class="inner-area">
+                                        <i class="mdi mdi-nest-protect"></i>
+                                        <button type="button" class="browsefile browse-profileimage">
+                                            <i class="mdi mdi-camera"></i>
+                                        </button>
+                                        <img id="profileimage" class="getimage get-profileimage" src="#" alt="your image" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center mt-5">
+
+                        <div class="col-md-12">
+
+                            <div class="row justify-content-center mt-5">
+                                <div class="col-md-6">
+                                    <div class="form-group validation validfname">
+                                        <div class="d-flex">
+                                            <input id="txtfname" type="text" class="form-control txtvalidate" placeholder="Enter Your First Name" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group validation validlname">
+                                        <div class="d-flex">
+                                            <input id="txtlname" type="text" class="form-control txtvalidate" placeholder="Enter Your Last Name" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group validation validphonenumber">
+                                        <div class="d-flex">
+                                            <input id="txtphonenumber" type="number" class="form-control txtvalidate" placeholder="Enter Your Phone Number" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group validation validage">
+                                        <div class="d-flex">
+                                            <input id="txtage" type="number" class="form-control txtvalidate" placeholder="Enter Your Age" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group validation validemail">
+                                        <div class="d-flex">
+                                            <input id="txtemail" type="text" class="form-control txtvalidate" placeholder="Enter Your Email" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group validation validcountry">
+                                        <div class="d-flex">
+                                            <input id="txtcountry" type="text" class="form-control txtvalidate" placeholder="Enter Your Country" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group validation validcity">
+                                        <div class="d-flex">
+                                            <input id="txtcity" type="text" class="form-control txtvalidate" placeholder="Enter Your City" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group validation validaddress">
+                                        <div class="d-flex">
+                                            <input id="txtaddress" type="text" class="form-control txtvalidate" placeholder="Enter Your Address" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group validation validbirthday">
+                                        <div class="d-flex">
+                                            <input id="txtbirthday" type="date" class="form-control txtvalidate" placeholder="Enter Your Birthday Date" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group validation validprofession">
+                                        <div class="d-flex">
+                                            <input id="txtprofession" type="text" class="form-control txtvalidate" placeholder="Enter Your Professsion" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group validation validaboutyourself">
+                                        <div class="d-flex">
+                                            <input id="txtaboutyourself" type="text" class="form-control txtvalidate" placeholder="About Yourself" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a id="AddPersonalDetail" class="btn btn-success float-left">+ Add Personal Detail</a>
+                            <label id="lblmsg" class="ml-5 text-success"></label>
+                            <a class="btn btn-info float-right NextPersonalDetail">
+                                Next Step
+                                <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Skills and service 2-->
+    <div class="col-md-8 grid-margin stretch-card step2container">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Skill & Services</h4>
+
+                <div class="forms-sample mt-3 skill-form">
+
+                    <p class="card-description text-primary font-weight-bolder m-auto">Add Skills</p>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="form-group validation validSkills">
+                                <div class="d-flex">
+                                    <input id="txtskills" type="text" class="form-control txtvalidate" placeholder="Enter Your Skills" />
+                                    <span class="indicator"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group validation validSkillpercentage">
+                                <div class="d-flex">
+                                    <input id="txtskillpercentage" type="number" max="100" class="form-control txtvalidate" placeholder="%" />
+                                    <span class="indicator"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <i class="mdi mdi-plus text-success icon-plus btn-skill-plus"></i>
+                            <i class="mdi mdi-delete text-danger icon-delete btn-skill-delete" style="display:none;"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="forms-sample mt-3">
+
+                    <p class="card-description text-primary font-weight-bolder m-auto">Add Services</p>
+
+                    <div class="row justif-content-center service-form">
+
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="form-group validation validSkills">
+                                        <div class="d-flex">
+                                            <input id="txtServices" type="text" class="form-control txtvalidate" placeholder="Enter Your Services" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <i class="mdi mdi-plus text-success icon-plus btn-service-plus"></i>
+                                    <i class="mdi mdi-delete text-danger icon-delete btn-service-delete" style="display:none;"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a id="AddPersonalDetail" class="btn btn-success float-left">+ Add Skills & Services</a>
+                    <label id="lblmsg" class="ml-5 text-success"></label>
+                    <a class="btn btn-info float-right NextSkillServices">
+                        Next Step
+                        <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--  Add Project 3-->
+    <div class="col-md-8 grid-margin stretch-card step3container">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Add Project</h4>
+
+                <div class="forms-sample mt-3">
+
+                    <p class="card-description text-primary font-weight-bolder m-auto">Please Fill All Detail About Project</p>
+
+                    <div class="row justify-content-center">
+
+                        <div class="col-md-12">
+
+                            <div class="outer-area mt-3" style="width:230px;height:230px;">
+                                <input type="file" id="FileProjectImage" accept="images/*" class="uploadfile file-projectimage d-none" />
+                                <div class="inner-area">
+                                    <i class="mdi mdi-nest-protect"></i>
+                                    <button type="button" class="browsefile browse-projectimage">
+                                        <i class="mdi mdi-camera"></i>
+                                    </button>
+                                    <img id="ProjectImage" class="getimage get-projectimage" src="#" />
+                                </div>
+                            </div>
+
+                            <div class="form-group validation validprojectname">
+                                <div class="d-flex">
+                                    <input id="txtprojectname" type="text" class="form-control txtvalidate" placeholder="Enter Project Name" />
+                                    <span class="indicator"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group validation validprojecttype">
+                                <div class="d-flex">
+                                    <input id="txtprojecttype" type="text" class="form-control txtvalidate" placeholder="Enter Project Type" />
+                                    <span class="indicator"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group validation validprojectinfo">
+                                <div class="d-flex">
+                                    <input id="txtprojectinfo" type="text" class="form-control txtvalidate" placeholder="Enter Project Information" />
+                                    <span class="indicator"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="file" id="FileFolder" class="file-upload-default" />
+                                <div class="input-group col-xs-12">
+                                    <input id="TxtFolderName" type="text" class="form-control txtfoldername" placeholder="Enter Project Folder Name" />
+                                    <span class="input-group-append">
+                                        <button class="file-upload-browse btn btn-primary" type="button">Browse Files</button>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input id="TxtProjectLink" type="text" class="form-control project-link text-info font-weight-bolder" placeholder="Project Link Generate Here....." />
+                            </div>
+
+                             <a id="AddProject" class="btn btn-success float-left">+ Add Project</a>
+                        <label id="lblmsg" class="ml-5 text-success"></label>
+                        <a class="btn btn-primary float-right CompletePortfolio">
+                            Completed
+                            <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                        </a>
+                        </div>
+
+                       
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+    <script>
+        $(".btnstep1").click(function() {
+            $('.btnstep1').addClass('active');
+            $('.btnstep2').removeClass('active');
+            $('.btnstep3').removeClass('active');
+            $('.step1container').show();
+            $('.step2container').hide();
+            $('.step3container').hide();
+        });
+        $(".btnstep2").click(function() {
+            $('.btnstep1').removeClass('active');
+            $('.btnstep2').addClass('active');
+            $('.btnstep3').removeClass('active');
+            $(".step1container").hide();
+            $(".step2container").show();
+            $(".step3container").hide();
+        });
+        $(".btnstep3").click(function() {
+            $('.btnstep1').removeClass('active');
+            $('.btnstep2').removeClass('active');
+            $('.btnstep3').addClass('active');
+            $(".step1container").hide();
+            $(".step2container").hide();
+            $(".step3container").show();
+        });
+
+        $(".skill-form").on("click", ".btn-skill-plus", function() {
+            var skill = '<div class="row justify-content-center">'
+            skill += '<div class="col-md-6">'
+            skill += '<div class="form-group validation validSkills">'
+            skill += '<div class="d-flex">'
+            skill += '<input id="txtskills" type="text"class="form-control txtvalidate" placeholder="Enter Your Skills" />'
+            skill += '<span class="indicator"></span>'
+            skill += '</div>'
+            skill += '</div>'
+            skill += '</div>'
+            skill += '<div class="col-3">'
+            skill += '<div class="form-group validation validSkillpercentage">'
+            skill += '<div class="d-flex">'
+            skill += '<input id="txtskillpercentage" type="number" max="100" class="form-control txtvalidate" placeholder=" % " />'
+            skill += '<span class="indicator"></span>'
+            skill += '</div>'
+            skill += '</div>'
+            skill += '</div>'
+            skill += '<div class="col-3">'
+            skill += '<i class="mdi mdi-plus text-success icon-plus btn-skill-plus"></i>'
+            skill += '<i class="mdi mdi-delete text-danger icon-delete btn-skill-delete"></i>'
+            skill += '</div>'
+            skill += '</div>'
+            $(".skill-form").append(skill);
+
+            $(".skill-form").each(function() {
+                var numItems = $(this).children().children().find(".btn-skill-delete").length;
+                if (numItems == 1) {
+                    $(".btn-skill-delete").hide();
+                }
+                else {
+                    $(".btn-skill-delete").show();
+                }
+            });
+
+        });
+
+        $(".skill-form").on("click", ".btn-skill-delete", function() {
+            $(this).parent().parent().remove();
+            debugger;
+            $(".skill-form").each(function() {
+                var numItems = $(this).children().children().find(".btn-skill-delete").length;
+                if (numItems == 1) {
+                    $(".btn-skill-delete").hide();
+                }
+                else {
+                    $(".btn-skill-delete").show();
+                }
+            });
+        });
+
+        $(".service-form").on("click", ".btn-service-plus", function() {
+            var serivce = '<div class="col-md-6">'
+            serivce += '<div class="row">'
+            serivce += '<div class="col-8">'
+            serivce += '<div class="form-group validation validSkills">'
+            serivce += '<div class="d-flex">'
+            serivce += '<input id="txtServices" type="text" class="form-control txtvalidate" placeholder="Enter Your Services" />'
+            serivce += '<span class="indicator"></span>'
+            serivce += '</div>'
+            serivce += '</div>'
+            serivce += '</div>'
+            serivce += '<div class="col-4">'
+            serivce += '<i class="mdi mdi-plus text-success icon-plus btn-service-plus"></i>'
+            serivce += '<i class="mdi mdi-delete text-danger icon-delete btn-service-delete"></i>'
+            serivce += '</div>'
+            serivce += '</div>'
+            serivce += '</div>'
+            $(".service-form").append(serivce);
+
+            $(".service-form").each(function() {
+                var numItems = $(this).children().children().children().find(".btn-service-delete").length;
+                if (numItems == 1) {
+                    $(".btn-service-delete").hide();
+                }
+                else {
+                    $(".btn-service-delete").show();
+                }
+            });
+        });
+
+        $(".service-form").on("click", ".btn-service-delete", function() {
+            $(this).parent().parent().parent().remove();
+            $(".service-form").each(function() {
+                var numItems = $(this).children().children().children().find(".btn-service-delete").length;
+                if (numItems == 1) {
+                    $(".btn-service-delete").hide();
+                }
+                else {
+                    $(".btn-service-delete").show();
+                }
+            });
+        });
+
+        $(".NextPersonalDetail").click(function() {
+            $('.btnstep1').addClass('completed').removeClass('active');
+            $('.btnstep2').addClass('active');
+            $('.step1container').hide();
+            $('.step2container').show();
+        });
+
+        $(".NextSkillServices").click(function() {
+            $('.btnstep1').addClass('completed').removeClass('active');
+            $('.btnstep2').addClass('completed').removeClass('active');
+            $('.btnstep3').addClass('active');
+            $('.step2container').hide();
+            $('.step3container').show();
+        });
+
+        $(".CompletePortfolio").click(function() {
+            $('.btnstep1').addClass('completed').removeClass('active');
+            $('.btnstep2').addClass('completed').removeClass('active');
+            $('.btnstep3').addClass('completed').removeClass('active');
+            $('.btnstep3').removeClass('active');            
+        });
+
+    </script>
+}

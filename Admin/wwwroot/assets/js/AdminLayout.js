@@ -646,6 +646,8 @@ document.onreadystatechange = function () {
             document.getElementById('loader-Container').style.visibility = "hidden";
             document.getElementById('load').style.visibility = "hidden";
             document.getElementById('contents').style.visibility = "visible";
+            document.getElementById('contents').style.visibility = "visible";
+            //$('#contents').css("visibility", "visible");
         });
     }
 }
