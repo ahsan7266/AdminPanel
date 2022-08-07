@@ -31381,13 +31381,8 @@ div.tagsinput {
     .Tabs a {
         display: block;
         position: relative;
-<<<<<<< Updated upstream
-        width: 33%;
-        height: 55px;
-=======
         width: 50%;
         height: 30px;
->>>>>>> Stashed changes
         float: right;
         transition: color .3s;
         border-top: 1px solid #e1e7ec;
