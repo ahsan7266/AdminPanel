@@ -50,150 +50,149 @@
                 </p>
 
                 <div class="form-sample">
+                    <form method="post" enctype="multipart/form-data" asp-controller="Portfolio" asp-action="AddPortfolioDetail">
 
-                    <div class="row justify-content-center mb-5">
-                        <div class="col-md-10">
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-md-10">
 
-                            <div class="background-area">
-                                <input id="Filebackgroundimage" type="file" accept="~/images/*" class="uploadfile file-backgroundimage d-none" />
-                                <span class="icon browse-backgroundimage">Upload Background Image</span>
-                                <div class="outer-area mt-3">
-                                    <input id="Fileprofileimage" type="file" accept="~/images/*" class="uploadfile file-profileimage d-none" />
-                                    <div class="inner-area">
-                                        <i class="mdi mdi-nest-protect"></i>
-                                        <button type="button" class="browsefile browse-profileimage">
-                                            <i class="mdi mdi-camera"></i>
-                                        </button>
-                                        <img id="profileimage" class="getimage get-profileimage" src="#" alt="your image" />
+                                <div class="background-area">
+                                    <input id="Filebackgroundimage" type="file" name="Backgroundimg" accept="~/images/*" class="uploadfile file-backgroundimage d-none" />
+                                    <span class="icon browse-backgroundimage">Upload Background Image</span>
+                                    <div class="outer-area mt-3">
+                                        <input id="Fileprofileimage" type="file" name="Profileimg" accept="~/images/*" class="uploadfile file-profileimage d-none" />
+                                        <div class="inner-area">
+                                            <i class="mdi mdi-nest-protect"></i>
+                                            <button type="button" class="browsefile browse-profileimage">
+                                                <i class="mdi mdi-camera"></i>
+                                            </button>
+                                            <img id="profileimage" class="getimage get-profileimage" src="#" alt="your image" />
+                                        </div>
                                     </div>
+
                                 </div>
 
                             </div>
-
                         </div>
-                    </div>
 
-                    <div class="row justify-content-center mt-5">
+                        <div class="row justify-content-center mt-5">
 
-                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <input id="txtpersonalid" type="text" name="PeronalInfoId" class="form-control txtvalidate" placeholder="Enter Your id" />
 
-                            <div class="row justify-content-center mt-5">
-                                <div class="col-md-6">
-                                    <div class="form-group validation validfname">
-                                        <div class="d-flex">
-                                            <input id="txtfname" type="text" class="form-control txtvalidate" placeholder="Enter Your First Name" />
-                                            <span class="indicator"></span>
+                                <div class="row justify-content-center mt-5">
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validfname">
+                                            <div class="d-flex">
+                                                <input id="txtfname" type="text" name="FirstName" class="form-control txtvalidate" placeholder="Enter Your First Name" />
+                                                <span class="indicator"></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group validation validlname">
-                                        <div class="d-flex">
-                                            <input id="txtlname" type="text" class="form-control txtvalidate" placeholder="Enter Your Last Name" />
-                                            <span class="indicator"></span>
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validlname">
+                                            <div class="d-flex">
+                                                <input id="txtlname" type="text" name="LastName" class="form-control txtvalidate" placeholder="Enter Your Last Name" />
+                                                <span class="indicator"></span>
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validphonenumber">
+                                            <div class="d-flex">
+                                                <input id="txtphonenumber" type="number" name="PhoneNumber" class="form-control txtvalidate" placeholder="Enter Your Phone Number" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validage">
+                                            <div class="d-flex">
+                                                <input id="txtage" type="number" name="Age" class="form-control txtvalidate" placeholder="Enter Your Age" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group validation validemail">
+                                            <div class="d-flex">
+                                                <input id="txtemail" type="text" name="Email" class="form-control txtvalidate" placeholder="Enter Your Email" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validcountry">
+                                            <div class="d-flex">
+                                                <input id="txtcountry" type="text" name="Country" value="Pakistan" class="form-control txtvalidate" placeholder="Enter Your Country" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validcity">
+                                            <div class="d-flex">
+                                                <input id="txtcity" type="text" name="City" class="form-control txtvalidate" placeholder="Enter Your City" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group validation validaddress">
+                                            <div class="d-flex">
+                                                <input id="txtaddress" type="text" name="Experience" class="form-control txtvalidate" placeholder="About Your Experience" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="file" id="Filecv" name="Cv" class="file-upload-default" />
+                                            <div class="input-group col-xs-12">
+                                                <input id="Txtcv" type="text" class="form-control txtcv" placeholder="Upload Your CV" />
+                                                <span class="input-group-append">
+                                                    <button class="file-upload-browse btn btn-primary" type="button">Browse Files</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group validation validaboutyourself">
+                                            <div class="d-flex">
+                                                <input id="txtaboutyourself" type="text" name="Detail" class="form-control txtvalidate" placeholder="About Yourself" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
 
-                                <div class="col-md-6">
-                                    <div class="form-group validation validphonenumber">
-                                        <div class="d-flex">
-                                            <input id="txtphonenumber" type="number" class="form-control txtvalidate" placeholder="Enter Your Phone Number" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button type="submit" id="AddPersonalDetail" class="btn btn-success float-left">+ Add Personal Detail</button>
+                                <label id="lblmsg" class="ml-5 text-success"></label>
+                                <a class="btn btn-info float-right NextPersonalDetail">
+                                    Next Step
+                                    <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                                </a>
 
-                                <div class="col-md-6">
-                                    <div class="form-group validation validage">
-                                        <div class="d-flex">
-                                            <input id="txtage" type="number" class="form-control txtvalidate" placeholder="Enter Your Age" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="col-md-12">
-                                    <div class="form-group validation validemail">
-                                        <div class="d-flex">
-                                            <input id="txtemail" type="text" class="form-control txtvalidate" placeholder="Enter Your Email" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group validation validcountry">
-                                        <div class="d-flex">
-                                            <input id="txtcountry" type="text" class="form-control txtvalidate" placeholder="Enter Your Country" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group validation validcity">
-                                        <div class="d-flex">
-                                            <input id="txtcity" type="text" class="form-control txtvalidate" placeholder="Enter Your City" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group validation validaddress">
-                                        <div class="d-flex">
-                                            <input id="txtaddress" type="text" class="form-control txtvalidate" placeholder="Enter Your Address" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group validation validbirthday">
-                                        <div class="d-flex">
-                                            <input id="txtbirthday" type="date" class="form-control txtvalidate" placeholder="Enter Your Birthday Date" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <div class="form-group validation validprofession">
-                                        <div class="d-flex">
-                                            <input id="txtprofession" type="text" class="form-control txtvalidate" placeholder="Enter Your Professsion" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <div class="form-group validation validaboutyourself">
-                                        <div class="d-flex">
-                                            <input id="txtaboutyourself" type="text" class="form-control txtvalidate" placeholder="About Yourself" />
-                                            <span class="indicator"></span>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
 
-                            <a id="AddPersonalDetail" class="btn btn-success float-left">+ Add Personal Detail</a>
-                            <label id="lblmsg" class="ml-5 text-success"></label>
-                            <a class="btn btn-info float-right NextPersonalDetail">
-                                Next Step
-                                <span class="mdi mdi-arrow-top-right-bold-outline"></span>
-                            </a>
 
                         </div>
-
-                    </div>
-
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
     <!--  Skills and service 2-->
     <div class="col-md-8 grid-margin stretch-card step2container">
         <div class="card">
@@ -327,15 +326,15 @@
                                 <input id="TxtProjectLink" type="text" class="form-control project-link text-info font-weight-bolder" placeholder="Project Link Generate Here....." />
                             </div>
 
-                             <a id="AddProject" class="btn btn-success float-left">+ Add Project</a>
-                        <label id="lblmsg" class="ml-5 text-success"></label>
-                        <a class="btn btn-primary float-right CompletePortfolio">
-                            Completed
-                            <span class="mdi mdi-arrow-top-right-bold-outline"></span>
-                        </a>
+                            <a id="AddProject" class="btn btn-success float-left">+ Add Project</a>
+                            <label id="lblmsg" class="ml-5 text-success"></label>
+                            <a class="btn btn-primary float-right CompletePortfolio">
+                                Completed
+                                <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                            </a>
                         </div>
 
-                       
+
 
                     </div>
 
@@ -487,7 +486,7 @@
             $('.btnstep1').addClass('completed').removeClass('active');
             $('.btnstep2').addClass('completed').removeClass('active');
             $('.btnstep3').addClass('completed').removeClass('active');
-            $('.btnstep3').removeClass('active');            
+            $('.btnstep3').removeClass('active');
         });
 
     </script>
