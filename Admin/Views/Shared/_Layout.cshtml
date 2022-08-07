@@ -42,7 +42,7 @@
                     </li>
 
                     <li class="nav-item menu-items">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" asp-action="Dashboard" asp-controller="Admin">
                             <span class="menu-icon">
                                 <i class="mdi mdi-speedometer"></i>
                             </span>
@@ -98,7 +98,7 @@
                 <!-- Header Navbar start -->
                 <nav class="navbar p-0 fixed-top d-flex flex-row">
                     <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-                        <a class="navbar-brand brand-logo-mini" href="Dashboard.aspx">
+                        <a class="navbar-brand brand-logo-mini" asp-action="Dashboard" asp-controller="Admin">
                             <img src="~/images/icon/myIcon.png" alt="logo" />
                         </a>
                     </div>
@@ -115,10 +115,10 @@
                         </ul>
                         <ul class="navbar-nav navbar-nav-right">
                             <li class="nav-item dropdown d-none d-lg-block">
-                                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" href="../default.aspx">My Portfolio</a>
+                                <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" asp-action="Dashboard" asp-controller="Portfolio">My Portfolio</a>
                             </li>
                             <li class="nav-item nav-settings d-none d-lg-block">
-                                <a class="nav-link" href="../default.aspx">
+                                <a class="nav-link" asp-action="Dashboard" asp-controller="Admin">
                                     <i class="mdi mdi-view-grid"></i>
                                 </a>
                             </li>
@@ -162,7 +162,7 @@
                                             </div>
                                         </div>
                                         <div class="preview-item-content">
-                                            <p class="preview-subject mb-1">Log out</p>
+                                            <a class="preview-subject mb-1" asp-action="Logout" asp-controller="Account">Log out</a>
                                         </div>
                                     </a>
                                 </div>
@@ -193,7 +193,7 @@
                             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Admin                                 
                                 <a href="#" target="_blank">@ViewBag.Name</a>
                                 From
-                                <a href="#" class="text-decoration-none text-white-50">Admin.com</a>
+                                <a asp-action="Dashboard" asp-controller="Admin" class="text-decoration-none text-white-50">Admin.com</a>
                             </span>
                         </div>
                     </footer>
