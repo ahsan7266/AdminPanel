@@ -1,7 +1,9 @@
 ﻿using Admin.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace Admin.Controllers
 {
@@ -26,35 +28,69 @@ namespace Admin.Controllers
             ViewBag.Name = HttpContext.Session.GetString("FirstName") + ' ' + HttpContext.Session.GetString("LastName");
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> AddPortfolioDetail(PersonalInfoViewModel Personalinfo)
         {
             using (HttpClient client = new HttpClient())
             {
-                MultipartFormDataContent multiForm = new MultipartFormDataContent();
-                IFormFile file = Personalinfo.Backgroundimg;
-                if (file.Length > 0)
+                if (Personalinfo.Backgroundimg is not null)
                 {
-                    ByteArrayContent bytes;
-                    byte[] data;
-                    using (var br = new BinaryReader(file.OpenReadStream()))
+                    using (var ms = new MemoryStream())
                     {
-                       data = br.ReadBytes((int)file.Length);
+                        Personalinfo.Backgroundimg.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        Personalinfo.BackgroundBas64 = Convert.ToBase64String(fileBytes);
+
+                        byte[] bytes = Convert.FromBase64String(Personalinfo.BackgroundBas64);
+                        MemoryStream stream = new MemoryStream(bytes);
+                        IFormFile file = new FormFile(stream, 0, bytes.Length, Personalinfo.Backgroundimg.Name, Personalinfo.Backgroundimg.FileName);
                     }
-                    bytes = new ByteArrayContent(data);
-                    //multiForm.Add(bytes, "Backgroundimg",file.FileName); 
-                    Personalinfo.Backgroundimgbyte = bytes;
                 }
+
+                if (Personalinfo.Profileimg is not null)
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        Personalinfo.Profileimg.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        Personalinfo.ProfileBas64 = Convert.ToBase64String(fileBytes);
+                    }
+                }
+
+                if (Personalinfo.Cv is not null)
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        Personalinfo.Cv.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        Personalinfo.ProfileBas64 = Convert.ToBase64String(fileBytes);
+                    }
+                }
+
+                PersonalInfoViewModel model = new PersonalInfoViewModel();
+                model.BackgroundBas64 = Personalinfo.BackgroundBas64;
+                model.ProfileBas64 = Personalinfo.ProfileBas64;
+                model.CvBas64 = Personalinfo.CvBas64;
+                model.FirstName = Personalinfo.FirstName;
+                model.LastName = Personalinfo.LastName;
+                model.Email = Personalinfo.Email;
+                model.PhoneNumber = Personalinfo.PhoneNumber;
+                model.Country = Personalinfo.Country;
+                model.City = Personalinfo.City;
+                model.Age = Personalinfo.Age;
+                model.Detail = Personalinfo.Detail;
+                model.Experience = Personalinfo.Experience;
+
                 client.BaseAddress = Constrant.AppUrl;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 //POST Method
-                HttpResponseMessage response = await client.PostAsJsonAsync("api/Portfolio/AddOrUpdatePersonalInfo", Personalinfo);
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/Portfolio/AddOrUpdatePersonalInfo", model);
                 if (response.IsSuccessStatusCode)
                 {
                     var Data = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
-
                     //return Redirect("/Admin/Dashboard");
                     return View();
 
@@ -67,6 +103,7 @@ namespace Admin.Controllers
                     return View();
                 }
             }
+
         }
     }
 }

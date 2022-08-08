@@ -61,7 +61,7 @@ namespace Admin.Controllers
                             HttpContext.Session.SetString("UserRole", item.Value.ToString());
                         }
                     }
-                   return Redirect("/Admin/Dashboard");
+                   return Redirect("/Portfolio/AddPortfolioDetail");
 
                     //var Token = HttpContext.Session.GetString("Token");
                     //var email = HttpContext.Session.GetString("Email");
