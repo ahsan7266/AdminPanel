@@ -77,7 +77,7 @@
                         <div class="row justify-content-center mt-5">
 
                             <div class="col-md-12">
-                                <input id="txtpersonalid" type="text" name="PeronalInfoId" class="form-control txtvalidate" placeholder="Enter Your id" />
+                                <input id="txtpersonalid" type="text" name="PeronalInfoId" class="form-control txtvalidate" value="@ViewBag.personalid" placeholder="Enter Your id" />
 
                                 <div class="row justify-content-center mt-5">
                                     <div class="col-md-6">
@@ -155,14 +155,13 @@
                                         <div class="form-group">
                                             <input type="file" id="Filecv" name="Cv" class="file-upload-default" />
                                             <div class="input-group col-xs-12">
-                                                <input id="Txtcv" type="text" class="form-control txtcv" placeholder="Upload Your CV" />
+                                                <input id="Txtcv" type="text" class="form-control file-upload-info" placeholder="Upload Your CV" />
                                                 <span class="input-group-append">
                                                     <button class="file-upload-browse btn btn-primary" type="button">Browse Files</button>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-
 
                                     <div class="col-md-6">
                                         <div class="form-group validation validaboutyourself">
@@ -181,18 +180,14 @@
                                     Next Step
                                     <span class="mdi mdi-arrow-top-right-bold-outline"></span>
                                 </a>
-
-
-
                             </div>
-
-
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
     <!--  Skills and service 2-->
     <div class="col-md-8 grid-margin stretch-card step2container">
         <div class="card">
@@ -203,11 +198,13 @@
 
                     <p class="card-description text-primary font-weight-bolder m-auto">Add Skills</p>
 
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center skilldiv">
+                        <input id="txtskillsid" type="text" class="form-control txtvalidate d-none txtskillsid" placeholder="Enter Your Skillsid" />
+
                         <div class="col-md-6">
                             <div class="form-group validation validSkills">
                                 <div class="d-flex">
-                                    <input id="txtskills" type="text" class="form-control txtvalidate" placeholder="Enter Your Skills" />
+                                    <input id="txtskills" type="text" class="form-control txtvalidate txtskills" placeholder="Enter Your Skills" />
                                     <span class="indicator"></span>
                                 </div>
                             </div>
@@ -215,7 +212,7 @@
                         <div class="col-3">
                             <div class="form-group validation validSkillpercentage">
                                 <div class="d-flex">
-                                    <input id="txtskillpercentage" type="number" max="100" class="form-control txtvalidate" placeholder="%" />
+                                    <input id="txtskillpercentage" type="number" max="100" class="form-control txtvalidate txtskillpercentage" placeholder="%" />
                                     <span class="indicator"></span>
                                 </div>
                             </div>
@@ -234,12 +231,14 @@
 
                     <div class="row justif-content-center service-form">
 
-                        <div class="col-md-6">
+                        <div class="col-md-6 servicediv">
+                            <input id="txtservicesid" type="text" class="form-control txtvalidate d-none txtservicesid" placeholder="Enter Your Serviceid" />
+
                             <div class="row">
                                 <div class="col-8">
                                     <div class="form-group validation validSkills">
                                         <div class="d-flex">
-                                            <input id="txtServices" type="text" class="form-control txtvalidate" placeholder="Enter Your Services" />
+                                            <input id="txtServices" type="text" class="form-control txtvalidate txtServices" placeholder="Enter Your Services" />
                                             <span class="indicator"></span>
                                         </div>
                                     </div>
@@ -253,7 +252,37 @@
 
                     </div>
 
-                    <a id="AddPersonalDetail" class="btn btn-success float-left">+ Add Skills & Services</a>
+
+                </div>
+
+                <div class="forms-sample mt-3">
+
+                    <p class="card-description text-primary font-weight-bolder m-auto">Add Tools</p>
+
+                    <div class="row justif-content-center tool-form">
+
+                        <div class="col-md-6 tooldiv">
+                        <input id="txttoolsid" type="text" class="form-control txtvalidate d-none txttoolsid" placeholder="Enter Your Toolid" />
+
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="form-group validation validTool">
+                                        <div class="d-flex">
+                                            <input id="txtTool" type="text" class="form-control txtvalidate txtTool" placeholder="Enter Your Tool" />
+                                            <span class="indicator"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <i class="mdi mdi-plus text-success icon-plus btn-tool-plus"></i>
+                                    <i class="mdi mdi-delete text-danger icon-delete btn-tool-delete" style="display:none;"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button id="AddOtherDetail" class="btn btn-success float-left">+ Add Skills & Services</button>
                     <label id="lblmsg" class="ml-5 text-success"></label>
                     <a class="btn btn-info float-right NextSkillServices">
                         Next Step
@@ -334,8 +363,6 @@
                             </a>
                         </div>
 
-
-
                     </div>
 
                 </div>
@@ -374,11 +401,12 @@
         });
 
         $(".skill-form").on("click", ".btn-skill-plus", function() {
-            var skill = '<div class="row justify-content-center">'
+            var skill = '<div class="row justify-content-center skilldiv">'
+            skill += '<input id="txtskillsid" type="text" class="form-control txtvalidate d-none txtskillsid" placeholder="Enter Your Skillsid" />'
             skill += '<div class="col-md-6">'
             skill += '<div class="form-group validation validSkills">'
             skill += '<div class="d-flex">'
-            skill += '<input id="txtskills" type="text"class="form-control txtvalidate" placeholder="Enter Your Skills" />'
+            skill += '<input id="txtskills" type="text"class="form-control txtvalidate txtskills" placeholder="Enter Your Skills" />'
             skill += '<span class="indicator"></span>'
             skill += '</div>'
             skill += '</div>'
@@ -386,7 +414,7 @@
             skill += '<div class="col-3">'
             skill += '<div class="form-group validation validSkillpercentage">'
             skill += '<div class="d-flex">'
-            skill += '<input id="txtskillpercentage" type="number" max="100" class="form-control txtvalidate" placeholder=" % " />'
+            skill += '<input id="txtskillpercentage" type="number" max="100" class="form-control txtvalidate txtskillpercentage" placeholder=" % " />'
             skill += '<span class="indicator"></span>'
             skill += '</div>'
             skill += '</div>'
@@ -425,12 +453,13 @@
         });
 
         $(".service-form").on("click", ".btn-service-plus", function() {
-            var serivce = '<div class="col-md-6">'
+            var serivce = '<div class="col-md-6 servicediv">'
+            serivce += '<input id="txtservicesid" type="text" class="form-control txtvalidate d-none txtservicesid" placeholder="Enter Your Serviceid" />'
             serivce += '<div class="row">'
             serivce += '<div class="col-8">'
             serivce += '<div class="form-group validation validSkills">'
             serivce += '<div class="d-flex">'
-            serivce += '<input id="txtServices" type="text" class="form-control txtvalidate" placeholder="Enter Your Services" />'
+            serivce += '<input id="txtServices" type="text" class="form-control txtvalidate txtServices" placeholder="Enter Your Services" />'
             serivce += '<span class="indicator"></span>'
             serivce += '</div>'
             serivce += '</div>'
@@ -467,6 +496,51 @@
             });
         });
 
+        $(".tool-form").on("click", ".btn-tool-plus", function() {
+            var tool = '<div class="col-md-6 tooldiv">'
+            tool += '<input id="txttoolsid" type="text" class="form-control txtvalidate d-none txttoolsid" placeholder="Enter Your Toolid" />'
+            tool += '<div class="row">'
+            tool += '<div class="col-8">'
+            tool += '<div class="form-group validation validTool">'
+            tool += '<div class="d-flex">'
+            tool += '<input id="txtTool" type="text" class="form-control txtvalidate txtTool" placeholder="Enter Your Tool" />'
+            tool += '<span class="indicator"></span>'
+            tool += '</div>'
+            tool += '</div>'
+            tool += '</div>'
+            tool += '<div class="col-4">'
+            tool += '<i class="mdi mdi-plus text-success icon-plus btn-tool-plus"></i>'
+            tool += '<i class="mdi mdi-delete text-danger icon-delete btn-tool-delete"></i>'
+            tool += '</div>'
+            tool += '</div>'
+            tool += '</div>'
+            $(".tool-form").append(tool);
+
+            $(".tool-form").each(function() {
+                var numItems = $(this).children().children().children().find(".btn-tool-delete").length;
+                if (numItems == 1) {
+                    $(".btn-tool-delete").hide();
+                }
+                else {
+                    $(".btn-tool-delete").show();
+                }
+            });
+        });
+
+        $(".tool-form").on("click", ".btn-tool-delete", function() {
+            $(this).parent().parent().parent().remove();
+            $(".tool-form").each(function() {
+                var numItems = $(this).children().children().children().find(".btn-tool-delete").length;
+                if (numItems == 1) {
+                    $(".btn-tool-delete").hide();
+                }
+                else {
+                    $(".btn-tool-delete").show();
+                }
+            });
+        });
+
+
         $(".NextPersonalDetail").click(function() {
             $('.btnstep1').addClass('completed').removeClass('active');
             $('.btnstep2').addClass('active');
@@ -487,6 +561,61 @@
             $('.btnstep2').addClass('completed').removeClass('active');
             $('.btnstep3').addClass('completed').removeClass('active');
             $('.btnstep3').removeClass('active');
+        });
+
+        $("#AddOtherDetail").click(function() {
+            debugger;
+            var personalid = $("#txtpersonalid").val();
+            var Skills = new Array();
+            $(".skill-form .skilldiv").each(function() {
+                var row = $(this);
+                var skill = {};
+                skill.SkillId = row.children().find(".txtskillsid").val();
+                skill.Name = row.children().find(".txtskills").val();
+                skill.Percentage = row.children().find(".txtskillpercentage").val();
+                skill.PeronalinfoId = personalid;
+                Skills.push(skill);
+            });
+            var Services = new Array();
+            $(".service-form .servicediv").each(function() {
+                var row = $(this);
+                var Service = {};
+                Service.ServiceId = row.find(".txtservicesid").val();
+                Service.Name = row.find(".txtServices").val();
+                Service.PeronalinfoId = personalid;
+                Services.push(Service);
+            });
+
+            var Tools = new Array();
+            $(".tool-form .tooldiv").each(function() {
+                var row = $(this);
+                var Tool = {};
+                Tool.ToolId = row.find(".txttoolsid").val();
+                Tool.Name = row.find(".txtTool").val();
+                Tool.PeronalinfoId = personalid;
+                Tools.push(Tool);
+            });
+
+
+            var model = {
+                "Skills": Skills,
+                "Services": Services,
+                "Tools": Tools,
+            }
+            alert(model)
+            $.ajax({
+                type: "post",
+                url: "/Portfolio/AddOtherDetail",
+                data: model,
+                datatype: "json",
+                cache: false,
+                success: function(data) {
+                    alert("You Multiple Data Passed Successfully");
+                },
+                error: function(xhr) {
+                    alert('No Valid Data');
+                }
+            });
         });
 
     </script>

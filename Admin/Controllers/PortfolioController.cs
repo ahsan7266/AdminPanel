@@ -1,4 +1,5 @@
 ﻿using Admin.Models;
+using Admin.Models.Portfolio;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
@@ -98,9 +99,8 @@ namespace Admin.Controllers
                 {
                     var Data = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
-                    //return Redirect("/Admin/Dashboard");
+                    ViewBag.personalid = Result.Data;
                     return View();
-
                 }
                 else
                 {
@@ -110,7 +110,33 @@ namespace Admin.Controllers
                     return View();
                 }
             }
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> AddOtherDetail(OtherViewModel model)
+        {
+            using (HttpClient client = new HttpClient())
+            {               
+                client.BaseAddress = Constrant.AppUrl;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //POST Method
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/Portfolio/SkillServiceTool", model);
+                if (response.IsSuccessStatusCode)
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
+                    ViewBag.personalid = Result.Data;
+                    return View();
+                }
+                else
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
+                    Console.WriteLine("Internal server Error");
+                    return View();
+                }
+            }
         }
     }
 }
