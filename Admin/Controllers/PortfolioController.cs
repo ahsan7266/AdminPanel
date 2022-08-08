@@ -69,9 +69,16 @@ namespace Admin.Controllers
                 }
 
                 PersonalInfoViewModel model = new PersonalInfoViewModel();
+                model.PeronalInfoId = Personalinfo.PeronalInfoId;
                 model.BackgroundBas64 = Personalinfo.BackgroundBas64;
+                model.BackgroundName = Personalinfo.Backgroundimg.Name;
+                model.BackgroundFileName = Personalinfo.Backgroundimg.FileName;
                 model.ProfileBas64 = Personalinfo.ProfileBas64;
+                model.ProfileName = Personalinfo.Profileimg.Name;
+                model.ProfileFileName = Personalinfo.Profileimg.FileName;
                 model.CvBas64 = Personalinfo.CvBas64;
+                model.CvName = Personalinfo.Cv.Name;
+                model.CvFileName = Personalinfo.Cv.FileName;
                 model.FirstName = Personalinfo.FirstName;
                 model.LastName = Personalinfo.LastName;
                 model.Email = Personalinfo.Email;
