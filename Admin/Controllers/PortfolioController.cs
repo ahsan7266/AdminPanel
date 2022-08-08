@@ -64,7 +64,7 @@ namespace Admin.Controllers
                     {
                         Personalinfo.Cv.CopyTo(ms);
                         var fileBytes = ms.ToArray();
-                        Personalinfo.ProfileBas64 = Convert.ToBase64String(fileBytes);
+                        Personalinfo.CvBas64 = Convert.ToBase64String(fileBytes);
                     }
                 }
 
