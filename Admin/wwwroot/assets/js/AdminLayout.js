@@ -619,7 +619,7 @@ $(document).ready(function () {
             $(this).parent().parent().find(".file-upload-info").attr('placeholder', filename);
 
             var foldername = $(".txtfoldername").val();
-            $(".project-link").val("../assets/Projects/" + foldername + "/" + filename);
+            $(".project-link").val(filename);
             $(".folder-name").val(foldername);
         });
     });

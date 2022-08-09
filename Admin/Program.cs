@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddSession(x =>
 {
-    x.IdleTimeout = TimeSpan.FromSeconds(10);
+    x.IdleTimeout = TimeSpan.FromSeconds(1000);
     x.Cookie.HttpOnly = true;
     x.Cookie.IsEssential = true;
 });

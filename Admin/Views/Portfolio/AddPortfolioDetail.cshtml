@@ -77,9 +77,18 @@
                         <div class="row justify-content-center mt-5">
 
                             <div class="col-md-12">
-                                <input id="txtpersonalid" type="text" name="PeronalInfoId" class="form-control txtvalidate" value="@ViewBag.personalid" placeholder="Enter Your id" />
 
                                 <div class="row justify-content-center mt-5">
+
+                                    <div class="col-md-12">
+                                        <div class="form-group validation validId">
+                                            <div class="d-flex">
+                                                <input id="txtPersonalId" type="text" name="PeronalInfoId" value="@ViewBag.personalid" class="form-control txtvalidate" placeholder="Enter Your Id" />
+                                                <span class="indicator"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group validation validfname">
                                             <div class="d-flex">
@@ -180,6 +189,7 @@
                                     Next Step
                                     <span class="mdi mdi-arrow-top-right-bold-outline"></span>
                                 </a>
+
                             </div>
                         </div>
                     </form>
@@ -302,69 +312,72 @@
                 <h4 class="card-title">Add Project</h4>
 
                 <div class="forms-sample mt-3">
+                    <form method="post" enctype="multipart/form-data" asp-controller="Portfolio" asp-action="ProjectInfo">
+                        <p class="card-description text-primary font-weight-bolder m-auto">Please Fill All Detail About Project</p>
 
-                    <p class="card-description text-primary font-weight-bolder m-auto">Please Fill All Detail About Project</p>
+                        <div class="row justify-content-center">
 
-                    <div class="row justify-content-center">
+                            <div class="col-md-12">
 
-                        <div class="col-md-12">
-
-                            <div class="outer-area mt-3" style="width:230px;height:230px;">
-                                <input type="file" id="FileProjectImage" accept="images/*" class="uploadfile file-projectimage d-none" />
-                                <div class="inner-area">
-                                    <i class="mdi mdi-nest-protect"></i>
-                                    <button type="button" class="browsefile browse-projectimage">
-                                        <i class="mdi mdi-camera"></i>
-                                    </button>
-                                    <img id="ProjectImage" class="getimage get-projectimage" src="#" />
+                                <div class="outer-area mt-3" style="min-width:40%;min-height:40%;border-radius: 25px;">
+                                    <input type="file" id="FileProjectImage" name="Img" accept="images/*" class="uploadfile file-projectimage d-none" />
+                                    <div class="inner-area">
+                                        <i class="mdi mdi-nest-protect"></i>
+                                        <button type="button" class="browsefile browse-projectimage">
+                                            <i class="mdi mdi-camera"></i>
+                                        </button>
+                                        <img id="ProjectImage" class="getimage get-projectimage" src="#" style="border-radius: 12px;object-fit: contain;width: 100%;height: 100%;object-fit:unset" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group validation validprojectname">
-                                <div class="d-flex">
-                                    <input id="txtprojectname" type="text" class="form-control txtvalidate" placeholder="Enter Project Name" />
-                                    <span class="indicator"></span>
+                                <div class="form-group validation validprojectId">
+                                    <div class="d-flex">
+                                        <input id="txtprojectid" type="text" name="ProjectId" class="form-control txtvalidate" placeholder="Enter Project Id" />
+                                        <span class="indicator"></span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group validation validprojecttype">
-                                <div class="d-flex">
-                                    <input id="txtprojecttype" type="text" class="form-control txtvalidate" placeholder="Enter Project Type" />
-                                    <span class="indicator"></span>
+                                <div class="form-group validation validprojectname">
+                                    <div class="d-flex">
+                                        <input id="txtprojectname" type="text" name="Name" class="form-control txtvalidate" placeholder="Enter Project Name" />
+                                        <span class="indicator"></span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group validation validprojectinfo">
-                                <div class="d-flex">
-                                    <input id="txtprojectinfo" type="text" class="form-control txtvalidate" placeholder="Enter Project Information" />
-                                    <span class="indicator"></span>
+                                <div class="form-group validation validprojecttype">
+                                    <div class="d-flex">
+                                        <input id="txtprojecttype" type="text" name="Type" class="form-control txtvalidate" placeholder="Enter Project Type" />
+                                        <span class="indicator"></span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <input type="file" id="FileFolder" class="file-upload-default" />
-                                <div class="input-group col-xs-12">
-                                    <input id="TxtFolderName" type="text" class="form-control txtfoldername" placeholder="Enter Project Folder Name" />
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Browse Files</button>
-                                    </span>
+                                <div class="form-group validation validPersonalId">
+                                    <div class="d-flex">
+                                        <input id="txtPersonalId" type="text" name="PeronalinfoId" value="@ViewBag.personalid" class="form-control txtvalidate" placeholder="Enter Personal Id" />
+                                        <span class="indicator"></span>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <input id="TxtProjectLink" type="text" class="form-control project-link text-info font-weight-bolder" placeholder="Project Link Generate Here....." />
-                            </div>
+                                <div class="form-group">
+                                    <input type="file" id="FileFolder" name="ProjectFile" class="file-upload-default" />
+                                    <div class="input-group col-xs-12">
+                                        <input id="TxtFolderName" type="text" class="form-control file-upload-info" placeholder="Enter Project Folder Name" />
+                                        <span class="input-group-append">
+                                            <button class="file-upload-browse btn btn-primary" type="button">Browse Files</button>
+                                        </span>
+                                    </div>
+                                </div>
 
-                            <a id="AddProject" class="btn btn-success float-left">+ Add Project</a>
-                            <label id="lblmsg" class="ml-5 text-success"></label>
-                            <a class="btn btn-primary float-right CompletePortfolio">
-                                Completed
-                                <span class="mdi mdi-arrow-top-right-bold-outline"></span>
-                            </a>
+                                <button type="submit" id="AddProject" class="btn btn-success float-left">+ Add Project</button>
+                                <label id="lblmsg" class="ml-5 text-success"></label>
+                                <a class="btn btn-primary float-right CompletePortfolio">
+                                    Completed
+                                    <span class="mdi mdi-arrow-top-right-bold-outline"></span>
+                                </a>
+                            </div>
                         </div>
 
-                    </div>
-
+                    </form>
                 </div>
 
             </div>

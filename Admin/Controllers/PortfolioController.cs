@@ -42,10 +42,6 @@ namespace Admin.Controllers
                         Personalinfo.Backgroundimg.CopyTo(ms);
                         var fileBytes = ms.ToArray();
                         Personalinfo.BackgroundBas64 = Convert.ToBase64String(fileBytes);
-
-                        byte[] bytes = Convert.FromBase64String(Personalinfo.BackgroundBas64);
-                        MemoryStream stream = new MemoryStream(bytes);
-                        IFormFile file = new FormFile(stream, 0, bytes.Length, Personalinfo.Backgroundimg.Name, Personalinfo.Backgroundimg.FileName);
                     }
                 }
 
@@ -128,6 +124,64 @@ namespace Admin.Controllers
                     var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
                     ViewBag.personalid = Result.Data;
                     return View();
+                }
+                else
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
+                    Console.WriteLine("Internal server Error");
+                    return View();
+                }
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProjectInfo(ProjectViewModel project)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                if (project.Img is not null)
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        project.Img.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        project.ImgBase64 = Convert.ToBase64String(fileBytes);
+                    }
+                }
+
+                if (project.ProjectFile is not null)
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        project.ProjectFile.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        project.ProjectFileBase64 = Convert.ToBase64String(fileBytes);
+                    }
+                }
+
+                ProjectViewModel model = new ProjectViewModel();
+                model.ProjectId = project.ProjectId;
+                model.Name = project.Name;
+                model.ImgBase64 = project.ImgBase64;
+                model.ImgName = project.Img.Name;
+                model.ImgFileName = project.Img.FileName;
+                model.ProjectFileBase64 = project.ProjectFileBase64;
+                model.ProjectFName = project.ProjectFile.Name;
+                model.ProjectFileName = project.ProjectFile.FileName;
+                model.Type = project.Type;
+                model.PeronalinfoId = project.PeronalinfoId;
+
+                client.BaseAddress = Constrant.AppUrl;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //POST Method
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/Portfolio/AddOrUpdateProject", model);
+                if (response.IsSuccessStatusCode)
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
+                    return Redirect("/Admin/Dashboard");
                 }
                 else
                 {
