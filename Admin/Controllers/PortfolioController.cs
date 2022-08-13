@@ -136,6 +136,7 @@ namespace Admin.Controllers
         }
 
         [HttpPost]
+        [DisableRequestSizeLimit,RequestFormLimits(MultipartBodyLengthLimit = int.MaxValue, ValueLengthLimit = int.MaxValue)]
         public async Task<IActionResult> ProjectInfo(ProjectViewModel project)
         {
             using (HttpClient client = new HttpClient())
