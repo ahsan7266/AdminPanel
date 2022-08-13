@@ -167,9 +167,16 @@ namespace Admin.Controllers
                 model.ImgBase64 = project.ImgBase64;
                 model.ImgName = project.Img.Name;
                 model.ImgFileName = project.Img.FileName;
-                model.ProjectFileBase64 = project.ProjectFileBase64;
-                model.ProjectFName = project.ProjectFile.Name;
-                model.ProjectFileName = project.ProjectFile.FileName;
+                if (project.ProjectFile is not null)
+                {
+                    model.ProjectFileBase64 = project.ProjectFileBase64;
+                    model.ProjectFName = project.ProjectFile.Name;
+                    model.ProjectFileName = project.ProjectFile.FileName;
+                }
+                else
+                {
+                    model.ProjectLink = project.ProjectLink;
+                }
                 model.Type = project.Type;
                 model.PeronalinfoId = project.PeronalinfoId;
 

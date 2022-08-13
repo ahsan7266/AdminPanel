@@ -15,7 +15,7 @@
         public string? ProjectFName { get; set; }
         public string? ProjectFileName { get; set; }
 
-        public string? Url { get; set; }
+        public string? ProjectLink { get; set; }
         public string? Type { get; set; }
         public Guid PeronalinfoId { get; set; }
     }
