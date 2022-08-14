@@ -27,6 +27,9 @@ namespace Admin.Controllers
                 return Redirect("/Account/Login");
             }
             ViewBag.Name = HttpContext.Session.GetString("FirstName") + ' ' + HttpContext.Session.GetString("LastName");
+
+
+
             return View();
         }
 
@@ -123,14 +126,14 @@ namespace Admin.Controllers
                     var Data = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
                     ViewBag.personalid = Result.Data;
-                    return View();
+                    return Redirect("/Portfolio/AddPortfolioDetail");
                 }
                 else
                 {
                     var Data = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
                     Console.WriteLine("Internal server Error");
-                    return View();
+                    return Redirect("/Portfolio/AddPortfolioDetail");
                 }
             }
         }
@@ -189,16 +192,45 @@ namespace Admin.Controllers
                 {
                     var Data = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
-                    return Redirect("/Admin/Dashboard");
+                    ViewBag.personalid = Result.Data;
+                    return Redirect("/Portfolio/AddPortfolioDetail");
                 }
                 else
                 {
                     var Data = await response.Content.ReadAsStringAsync();
                     var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
                     Console.WriteLine("Internal server Error");
-                    return View();
+                    return Redirect("/Portfolio/AddPortfolioDetail");
                 }
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> ProjectType(ProjectTypeViewModel model)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = Constrant.AppUrl;
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                //POST Method
+                HttpResponseMessage response = await client.PostAsJsonAsync("api/Portfolio/AddOrUpdateProjectType", model);
+                if (response.IsSuccessStatusCode)
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
+                    ViewBag.personalid = Result.Data;
+                    return Redirect("/Portfolio/AddPortfolioDetail");
+                }
+                else
+                {
+                    var Data = await response.Content.ReadAsStringAsync();
+                    var Result = JsonConvert.DeserializeObject<Response<string>>(Data);
+                    Console.WriteLine("Internal server Error");
+                    return Redirect("/Portfolio/AddPortfolioDetail");
+                }
+            }
+        }
+
     }
 }

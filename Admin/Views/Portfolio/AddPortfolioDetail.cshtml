@@ -136,7 +136,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group validation validcountry">
                                             <div class="d-flex">
-                                                <input id="txtcountry" type="text" name="Country" value="Pakistan" class="form-control txtvalidate" placeholder="Enter Your Country" />
+                                                <input id="txtcountry" type="text" name="Country" value="Pakistan" class="form-control txtvalidate bg-transparent" placeholder="Enter Your Country" readonly />
                                                 <span class="indicator"></span>
                                             </div>
                                         </div>
@@ -309,6 +309,47 @@
     <div class="col-md-8 grid-margin stretch-card step3container">
         <div class="card">
             <div class="card-body">
+                <h4 class="card-title">Add Project Type</h4>
+
+                <div class="forms-sample mt-3">
+                    <form method="post" asp-controller="Portfolio" asp-action="ProjectType">
+                        <div class="row justify-content-center">
+
+                            <div class="col-md-2 validprojecttpyeId">
+                                <div class="form-group validation">
+                                    <div class="d-flex">
+                                        <input id="txtprojecttypeid" type="text" name="ProjecttypeId" class="form-control txtvalidate" placeholder="Enter Project Type Id" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group validation validprojecttpyeName">
+                                    <div class="d-flex">
+                                        <input id="txtprojecttypeName" type="text" name="Name" class="form-control txtvalidate" placeholder="Enter Project Type Name" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group validation validPersonalId">
+                                    <div class="d-flex">
+                                        <input id="txtPersonalId" type="text" name="PeronalinfoId" value="@ViewBag.personalid" class="form-control txtvalidate" placeholder="Enter Personal Id" />
+                                        <span class="indicator"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <button type="submit" id="AddProject" class="btn btn-success float-left">+ Add Project</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
                 <h4 class="card-title">Add Project</h4>
 
                 <div class="forms-sample mt-3">
@@ -340,13 +381,6 @@
                                 <div class="form-group validation validprojectname">
                                     <div class="d-flex">
                                         <input id="txtprojectname" type="text" name="Name" class="form-control txtvalidate" placeholder="Enter Project Name" />
-                                        <span class="indicator"></span>
-                                    </div>
-                                </div>
-
-                                <div class="form-group validation validprojecttype">
-                                    <div class="d-flex">
-                                        <input id="txtprojecttype" type="text" name="Type" class="form-control txtvalidate" placeholder="Enter Project Type" />
                                         <span class="indicator"></span>
                                     </div>
                                 </div>
@@ -592,7 +626,6 @@
         });
 
         $("#AddOtherDetail").click(function() {
-            debugger;
             var personalid = $("#txtpersonalid").val();
             var Skills = new Array();
             $(".skill-form .skilldiv").each(function() {
@@ -630,7 +663,6 @@
                 "Services": Services,
                 "Tools": Tools,
             }
-            alert(model)
             $.ajax({
                 type: "post",
                 url: "/Portfolio/AddOtherDetail",
@@ -645,6 +677,30 @@
                 }
             });
         });
+
+        var personalid = $("#txtPersonalId").val();
+        if (personalid == "") {
+            $(".validId").hide();
+        }
+        else {
+            $(".validId").show();
+        }
+
+        var projectid = $("#txtprojectid").val();
+        if (projectid == "") {
+            $(".validprojectId").hide();
+        }
+        else {
+            $(".validprojectId").show();
+        }
+
+        var projecttypeid = $("#txtprojecttypeid").val();
+        if (projecttypeid == "") {
+            $(".validprojecttpyeId").hide();
+        }
+        else {
+            $(".validprojecttpyeId").show();
+        }
 
     </script>
 }
